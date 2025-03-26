@@ -5,7 +5,7 @@ const RobotViewer = dynamic(() => import("../robot-model/robot-view"), { ssr: fa
 export default function Hero() {
     return (
         <div className="md:h-[70vh]">
-            <section className="pt-24 mx-auto max-w-screen-xl pb-12 items-center lg:flex lg:justify-content-between px-6 md:px-0">
+            <section className="pt-8 md:pt-24 mx-auto max-w-screen-xl pb-12 items-center lg:flex lg:justify-content-between px-6 md:px-0">
                 <div className="space-y-4 flex-1 sm:text-center lg:text-left">
                     <h1 className="text-black dark:text-white font-bold text-4xl xl:text-5xl">
                         Bem-vindo ao

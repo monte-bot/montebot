@@ -27,20 +27,21 @@ export default function Navbar() {
 
                 <div className="hidden md:flex flex-1 justify-center space-x-6">
                     {navigation.map((item, idx) => (
-                        <Link key={idx} href={item.path} className="text-black dark:text-white hover:text-yellow-custom">
+                        <Link key={idx} href={item.path} className="text-black dark:text-white hover:text-yellow-custom dark:hover:text-yellow-custom">
                             {item.title}
                         </Link>
                     ))}
                 </div>
 
-                <div className="hidden md:flex justify-content-center gap-4">
+                <div className="hidden md:flex justify-content-center items-center gap-4">
                     <Link href="/login" className="py-2 px-4 text-black dark:text-white bg-yellow-custom hover:bg-yellow-700 rounded-md shadow">
                         Login
                     </Link>
                     <ModeToggle />
                 </div>
 
-                <div className="md:hidden">
+                <div className="md:hidden flex items-center gap-2">
+                    <ModeToggle />
                     <button
                         className="text-white p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
                         onClick={() => setMenuOpen(true)}
