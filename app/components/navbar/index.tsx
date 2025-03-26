@@ -4,9 +4,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
 import { ModeToggle } from '../mode-toogle';
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { theme } = useTheme();
 
     const navigation = [
         { title: "Sobre nós", path: "/sobre" },
@@ -15,13 +17,15 @@ export default function Navbar() {
         { title: "Contato", path: "/contato" }
     ];
 
+    const logoSrc = theme === "dark" ? "/logo/logo-white.svg" : "/logo/logo-dark.svg";
+
     return (
         <nav className="w-full md:static bg-white dark:bg-black">
             <div className="max-w-screen-xl mx-auto flex items-center justify-between md:py-4 px-4 md:px-0">
 
                 <div className="flex-shrink-0">
                     <Link href="/">
-                        <Image src="/logo.png" alt="Logo" width={90} height={90} />
+                        <Image src={logoSrc} alt="Logo" width={50} height={50} />
                     </Link>
                 </div>
 
