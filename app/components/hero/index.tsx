@@ -16,7 +16,7 @@ export default function Hero() {
                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
                     </p>
                     <div className="pt-10 items-center justify-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex lg:justify-start">
-                        <a href="javascript:void(0)" className="px-7 py-3 w-full bg-yellow-custom text-black dark:text-white text-center rounded-md shadow-md block sm:w-auto">
+                        <a href="#" className="px-7 py-3 w-full bg-yellow-custom text-black dark:text-white text-center rounded-md shadow-md block sm:w-auto">
                             Saber mais
                         </a>
                     </div>

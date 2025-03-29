@@ -20,7 +20,7 @@ export default function Navbar() {
     const logoSrc = theme === "dark" ? "/logo/logo-white.svg" : "/logo/logo-dark.svg";
 
     return (
-        <nav className="container mx-auto bg-white dark:bg-black">
+        <nav className="container mx-auto">
             <div className="flex items-center justify-between md:py-4 px-4 md:px-8">
 
                 <div className="flex-shrink-0">
