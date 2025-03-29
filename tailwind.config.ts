@@ -53,13 +53,17 @@ const config: Config = {
 				}
 			},
 			animation: {
-				'fade-in': 'fadeIn 0.3s ease-in-out',
+				marquee: 'marquee var(--duration, 30s) linear infinite',
+				'fade-in': 'fadeIn 0.3s ease-in-out'				
 			},
 			keyframes: {
+				marquee: {
+					to: { transform: 'translateX(-50%)' }
+				},
 				fadeIn: {
 					'0%': { opacity: '0', transform: 'scale(0.95)' },
-					'100%': { opacity: '1', transform: 'scale(1)' },
-				}
+					'100%': { opacity: '1', transform: 'scale(1)' }
+				}				
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
