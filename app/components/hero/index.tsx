@@ -13,7 +13,7 @@ export default function Hero() {
                         da UFU de Monte Carmelo
                     </h1>
                     <p className="text-gray-600 dark:text-gray-300 max-w-xl leading-relaxed sm:mx-auto lg:ml-0">
-                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+                        Somos o MonteBot, o núcleo de robótica do campus Monte Carmelo da UFU. Desenvolvemos projetos que unem criatividade, tecnologia e inovação, integrando alunos de diferentes cursos em soluções que transformam ideias em realidade.
                     </p>
                     <div className="pt-10 items-center justify-center space-y-3 sm:space-x-6 sm:space-y-0 sm:flex lg:justify-start">
                         <a href="#" className="px-7 py-3 w-full bg-yellow-custom text-black dark:text-white text-center rounded-md shadow-md block sm:w-auto">

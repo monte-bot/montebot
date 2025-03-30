@@ -10,9 +10,9 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const { theme } = useTheme();
 
-    const navigation = [
-        { title: "Sobre nós", path: "/sobre" },
+    const navigation = [        
         { title: "Projetos", path: "/projetos" },
+        { title: "Galeria", path: "/galeria" },
         { title: "Membros", path: "/membros" },
         { title: "Contato", path: "/contato" }
     ];
