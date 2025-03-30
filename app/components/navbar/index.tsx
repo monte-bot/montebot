@@ -1,23 +1,20 @@
 "use client";
 
-import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
 import { ModeToggle } from '../mode-toogle';
-import { useTheme } from "next-themes";
+import { Logo } from '../logo';
+
 
 export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const { theme } = useTheme();
+    const [menuOpen, setMenuOpen] = useState(false);    
 
-    const navigation = [        
+    const navigation = [
         { title: "Projetos", path: "/projetos" },
         { title: "Galeria", path: "/galeria" },
         { title: "Membros", path: "/membros" },
         { title: "Contato", path: "/contato" }
-    ];
-
-    const logoSrc = theme === "dark" ? "/logo/logo-white.svg" : "/logo/logo-dark.svg";
+    ];    
 
     return (
         <nav className="container mx-auto">
@@ -25,7 +22,7 @@ export default function Navbar() {
 
                 <div className="flex-shrink-0">
                     <Link href="/">
-                        <Image src={logoSrc} alt="Logo" width={50} height={50} />
+                        <Logo />
                     </Link>
                 </div>
 

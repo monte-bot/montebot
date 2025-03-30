@@ -18,7 +18,7 @@ export function MarqueeDemo() {
     const arr = [Logos.ufu, Logos.facom, Logos.proex]
 
     return (
-        <div className="pt-12 container mx-auto">
+        <div className="pt-12 container mx-auto px-6 md:px-8">
             <div className="flex justify-center text-center">
                 <h1 className="text-3xl font-bold pb-12">Parceiros</h1>
             </div>
