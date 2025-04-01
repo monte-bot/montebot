@@ -15,6 +15,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const gesrics = localFont({
+  src: "./fonts/Gesrics.otf",
+  variable: "--font-gesrics",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "Monte Bot",
@@ -29,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${gesrics.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"

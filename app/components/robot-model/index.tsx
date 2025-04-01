@@ -15,7 +15,7 @@ export default function RobotModel() {
     //Rotaciona o modelo continuamente
     useFrame(() => {
         if (modelRef.current) {
-            modelRef.current.rotation.y += 0.01;
+            modelRef.current.rotation.y += 0.005;
         }
     });
 

@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function Projects() {
     return (
         <div className="container mx-auto px-6 md:px-8 pt-20">
-            <h1 className="text-3xl font-bold text-center mb-16">Nossos Projetos</h1>
+            <h1 className="font-gesrics text-3xl font-bold text-center mb-16">Nossos Projetos</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {/* Card 1 - Carro Autônomo */}
@@ -19,7 +19,7 @@ export default function Projects() {
                         />
                     </div>
                     <CardHeader className="pb-2">
-                        <CardTitle className="text-lg">Carro Autônomo com Arduino</CardTitle>
+                        <CardTitle className="font-gesrics text-md">Carro Autonomo com Arduino</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="text-sm text-muted-foreground">
@@ -40,7 +40,7 @@ export default function Projects() {
                         />
                     </div>
                     <CardHeader className="pb-2">
-                        <CardTitle className="text-lg">Mão Mecânica Controlada por Gestos</CardTitle>
+                        <CardTitle className="font-gesrics text-md">Mao Mecanica Controlada por Gestos</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="text-sm text-muted-foreground">
@@ -61,7 +61,7 @@ export default function Projects() {
                         />
                     </div>
                     <CardHeader className="pb-2">
-                        <CardTitle className="text-lg">Robótica com Raspberry Pi</CardTitle>
+                        <CardTitle className="font-gesrics text-md">Robotica com Raspberry Pi</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="text-sm text-muted-foreground">Desenvolvimento de robôs inteligentes usando Raspberry Pi.</p>
@@ -80,7 +80,7 @@ export default function Projects() {
                         />
                     </div>
                     <CardHeader className="pb-2">
-                        <CardTitle className="text-lg">Projetos IoT e Automação Residencial</CardTitle>
+                        <CardTitle className="font-gesrics text-md">Projetos IoT e Automacao Residencial</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="text-sm text-muted-foreground">Soluções inteligentes para casas e ambientes conectados.</p>

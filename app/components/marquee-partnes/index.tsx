@@ -20,7 +20,7 @@ export function MarqueeDemo() {
     return (
         <div className="pt-12 container mx-auto px-6 md:px-8">
             <div className="flex justify-center text-center">
-                <h1 className="text-3xl font-bold pb-12">Parceiros</h1>
+                <h1 className="font-gesrics text-3xl font-bold pb-12">Parceiros</h1>
             </div>
             <Marquee>
                 {arr.map((Logo, index) => (

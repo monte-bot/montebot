@@ -11,9 +11,8 @@ export default function Navbar() {
 
     const navigation = [
         { title: "Projetos", path: "/projetos" },
-        { title: "Galeria", path: "/galeria" },
         { title: "Membros", path: "/membros" },
-        { title: "Contato", path: "/contato" }
+        { title: "Processo Seletivo", path: "/processo" }
     ];    
 
     return (
@@ -28,23 +27,23 @@ export default function Navbar() {
 
                 <div className="hidden md:flex flex-1 justify-center space-x-6">
                     {navigation.map((item, idx) => (
-                        <Link key={idx} href={item.path} className="text-black dark:text-white hover:text-yellow-custom dark:hover:text-yellow-custom">
+                        <Link key={idx} href={item.path} className="font-gesrics duration-150 text-black dark:text-white hover:text-blue-tech dark:hover:text-blue-tech">
                             {item.title}
                         </Link>
                     ))}
                 </div>
 
                 <div className="hidden md:flex justify-content-center items-center gap-4">
-                    <Link href="/login" className="py-2 px-4 text-black dark:text-white bg-yellow-custom hover:bg-yellow-700 rounded-md shadow">
+                    <Link href="/login" className="font-gesrics py-2 px-4 text-white bg-blue-tech hover:bg-blue-900 rounded-md shadow duration-150">
                         Login
                     </Link>
                     <ModeToggle />
                 </div>
 
-                <div className="md:hidden flex items-center gap-2">
+                <div className="md:hidden flex items-center gap-2 p-3">
                     <ModeToggle />
                     <button
-                        className="text-white p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
+                        className="text-black dark:text-white p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
                         onClick={() => setMenuOpen(true)}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -85,7 +84,7 @@ export default function Navbar() {
                         <Link
                             href="/login"
                             onClick={() => setMenuOpen(false)}
-                            className="py-2 px-4 mt-6 bg-yellow-custom text-white dark:text-black rounded-md hover:bg-yellow-700"
+                            className="font-gesrics py-2 px-4 mt-6 bg-yellow-custom text-white dark:text-black rounded-md hover:bg-yellow-700 duration-150"
                         >
                             Login
                         </Link>

@@ -7,37 +7,17 @@ export default function Footer() {
 
     const footerNavs = [
         {
-            label: "Explore a Loja",
+            label: "Endereco",
             items: [
-                { href: "#", name: "Sobre Nós" },
-                { href: "#", name: "Projetos" },
-                { href: "#", name: "Membros" },
-                { href: "#", name: "Contato" },
-            ],
-        },
-        {
-            label: "Endereço",
-            items: [
-                { href: "#", name: "Rodovia LMG 746, Km 1" },
-                { href: "#", name: "Monte Carmelo - MG" },
-                { href: "#", name: "Laboratório 7" },
-                { href: "#", name: "Telefone: (34) 3810-1044" },
-            ],
-        },
-        {
-            label: "Minha Conta",
-            items: [
-                { href: "#", name: "Envio e Entrega" },
-                { href: "#", name: "Login" },
-                { href: "#", name: "Cadastrar" },
-                { href: "#", name: "Meus Pedidos" },
+                { href: "https://maps.app.goo.gl/CptzvWehYZkqxR7C9", name: "Rodovia LMG 746, Km 1" },
+                { href: "https://maps.app.goo.gl/CptzvWehYZkqxR7C9", name: "Monte Carmelo - MG" },
+                { href: "https://maps.app.goo.gl/CptzvWehYZkqxR7C9", name: "Laboratório 7" },
             ],
         },
         {
             label: "Contato",
             items: [
                 { href: "mailto: montebotufumc@gmail.com", name: " montebotufumc@gmail.com" },
-                { href: "tel:+5511999999999", name: "(11) 99999-9999" },
             ],
         },
     ];
@@ -54,14 +34,14 @@ export default function Footer() {
     return (
         <footer className="pt-10">
             <div className="container mx-auto px-4 md:px-8">
-                <div className="flex-1 mt-16 space-y-6 justify-between sm:flex md:space-y-0">
+                <div className="flex-1 mt-16 space-y-6 justify-around sm:flex md:space-y-0">
                     {
                         footerNavs.map((item, idx) => (
                             <ul
                                 className="space-y-4 text-gray-600 dark:text-gray-300"
                                 key={idx}
                             >
-                                <h4 className="text-gray-800 dark:text-gray-400 font-semibold sm:pb-2">
+                                <h4 className="font-gesrics text-gray-800 dark:text-gray-400 font-semibold sm:pb-2">
                                     {item.label}
                                 </h4>
                                 {
@@ -69,7 +49,7 @@ export default function Footer() {
                                         <li key={idx}>
                                             <a
                                                 href={el.href}
-                                                className="hover:text-yellow-custom duration-150"
+                                                className="hover:text-blue-tech duration-150"
 
                                             >
                                                 {el.name}
@@ -100,7 +80,7 @@ export default function Footer() {
                     </div> */}
                 </div>
 
-                <div className="sm:flex justify-between items-center mt-10 py-10 border-t">
+                <div className="font-gesrics sm:flex justify-between items-center mt-10 py-10 border-t">
                     <p className="font-medium">© 2025 MonteBot. Todos os direitos reservados.</p>
                     <Link href="https://nathanmota-portifolio.vercel.app/pt" target="_blank" rel="noopener noreferrer">
                         <div className="flex justify-center items-center gap-2 font-medium">

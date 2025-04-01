@@ -13,6 +13,7 @@ const config: Config = {
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			'yellow-custom': '#CA992B',
+				'blue-tech' : '#0059b6',
     			card: {
     				DEFAULT: 'hsl(var(--card))',
     				foreground: 'hsl(var(--card-foreground))'
@@ -52,6 +53,9 @@ const config: Config = {
     				'5': 'hsl(var(--chart-5))'
     			}
     		},
+			fontFamily: {
+				gesrics: ["var(--font-gesrics)", "sans-serif"],
+			},
     		animation: {
     			marquee: 'marquee var(--duration) infinite linear',
     			'fade-in': 'fadeIn 0.3s ease-in-out',
@@ -89,7 +93,7 @@ const config: Config = {
     			lg: 'var(--radius)',
     			md: 'calc(var(--radius) - 2px)',
     			sm: 'calc(var(--radius) - 4px)'
-    		}
+    		},
     	}
     },
 	plugins: [require("tailwindcss-animate")],
