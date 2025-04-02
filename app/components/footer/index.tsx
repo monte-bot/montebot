@@ -33,7 +33,7 @@ export default function Footer() {
 
     return (
         <footer className="pt-10">
-            <div className="container mx-auto px-4 md:px-8">
+            <div className="container-fluid mx-auto px-4 md:px-8">
                 <div className="flex-1 mt-16 space-y-6 justify-around sm:flex md:space-y-0">
                     {
                         footerNavs.map((item, idx) => (
@@ -49,7 +49,7 @@ export default function Footer() {
                                         <li key={idx}>
                                             <a
                                                 href={el.href}
-                                                className="hover:text-blue-tech duration-150"
+                                                className="hover:text-yellow-custom duration-150"
 
                                             >
                                                 {el.name}

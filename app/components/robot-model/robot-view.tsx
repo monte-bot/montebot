@@ -10,13 +10,7 @@ export default function RobotViewer() {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth <= 1024) {
-                // Ajuste para telas menores (mobile)
-                setCanvasSize({ width: "75vw", height: "45vh" });
-            } else {
-                // Ajuste para telas maiores
-                setCanvasSize({ width: "35vw", height: "45vh" });
-            }
+            setCanvasSize({ width: "35vw", height: "45vh" });
         };
 
         // Chama a função inicialmente e adiciona o listener de resize

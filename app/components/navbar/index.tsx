@@ -27,14 +27,14 @@ export default function Navbar() {
 
                 <div className="hidden md:flex flex-1 justify-center space-x-6">
                     {navigation.map((item, idx) => (
-                        <Link key={idx} href={item.path} className="font-gesrics duration-150 text-black dark:text-white hover:text-blue-tech dark:hover:text-blue-tech">
+                        <Link key={idx} href={item.path} className="font-gesrics duration-150 text-black dark:text-white hover:text-yellow-custom dark:hover:text-yellow-custom">
                             {item.title}
                         </Link>
                     ))}
                 </div>
 
                 <div className="hidden md:flex justify-content-center items-center gap-4">
-                    <Link href="/login" className="font-gesrics py-2 px-4 text-white bg-blue-tech hover:bg-blue-900 rounded-md shadow duration-150">
+                    <Link href="/login" className="font-gesrics py-2 px-4 text-white bg-yellow-custom hover:bg-yellow-700 rounded-md shadow duration-150">
                         Login
                     </Link>
                     <ModeToggle />
