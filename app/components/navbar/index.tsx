@@ -10,9 +10,9 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);    
 
     const navigation = [
-        { title: "Projetos", path: "/projetos" },
-        { title: "Membros", path: "/membros" },
-        { title: "Processo Seletivo", path: "/processo" }
+        { title: "Projetos", path: "/projects" },
+        { title: "Membros", path: "/members" },
+        { title: "Processo Seletivo", path: "/selective-process" }
     ];    
 
     return (

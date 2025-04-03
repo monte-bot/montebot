@@ -7,6 +7,14 @@ export default function Footer() {
 
     const footerNavs = [
         {
+            label: "Links",
+            items: [
+                { href: "/projects", name: "Projectos" },
+                { href: "/members", name: "Membros" },
+                { href: "/selective-process", name: "Processo seletivo" },
+            ],
+        },
+        {
             label: "Endereco",
             items: [
                 { href: "https://maps.app.goo.gl/CptzvWehYZkqxR7C9", name: "Rodovia LMG 746, Km 1" },
@@ -21,16 +29,7 @@ export default function Footer() {
             ],
         },
     ];
-
-    // const paymentMethods = [
-    //     { name: "Visa", src: "/payments/visa.svg" },
-    //     { name: "Mastercard", src: "/payments/mastercard.svg" },
-    //     { name: "Elo", src: "/payments/elo.svg" },
-
-    //     { name: "Pix", src: "/payments/pix.svg" },
-    //     { name: "Boleto", src: "/payments/boleto.svg" },
-    // ];
-
+    
     return (
         <footer className="pt-10">
             <div className="container-fluid mx-auto px-4 md:px-8">
@@ -60,33 +59,16 @@ export default function Footer() {
                             </ul>
                         ))
                     }
-
-                    {/* <div>
-                        <h4 className="text-gray-800 dark:text-gray-400 font-semibold sm:pb-2">
-                            Pagamento
-                        </h4>
-                        <div className="flex flex-wrap gap-4 mt-4">
-                            {paymentMethods.map((method, idx) => (
-                                <Image
-                                    key={idx}
-                                    src={method.src}
-                                    alt={method.name}
-                                    width={45}
-                                    height={34}
-                                    className="h-auto"
-                                />
-                            ))}
-                        </div>
-                    </div> */}
+                   
                 </div>
 
-                <div className="font-gesrics sm:flex justify-between items-center mt-10 py-10 border-t">
+                <div className="font-gesrics container mx-auto px-6 md:px-8 sm:flex justify-between items-center mt-10 py-10 border-t">
                     <p className="font-medium">© 2025 MonteBot. Todos os direitos reservados.</p>
-                    <Link href="https://nathanmota-portifolio.vercel.app/pt" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://github.com/monte-bot" target="_blank" rel="noopener noreferrer">
                         <div className="flex justify-center items-center gap-2 font-medium">
 
                             <CodeXml />
-                            <p> Nathan Mota</p>
+                            <p> Monte Bot</p>
 
                         </div>
                     </Link>
