@@ -12,38 +12,44 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 
+const ModalityEnum = ["web", "design", "marketing", "robotics"] as const;
+const YearEnum = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"] as const;
+
 const formSchema = z.object({
     name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
     email: z.string().email({ message: "Email inválido" }),
     studentId: z.string().min(1, { message: "Matrícula é obrigatória" }),
-    modality: z.string().min(1, { message: "A modalidade é obrigatória" }),
-    year: z.string().min(1, { message: "O período é obrigatório" }),
+    modality: z.enum(ModalityEnum, { message: "Modalidade inválida" }), // Validação de modalidade
+    year: z.enum(YearEnum, { message: "Período inválido" }), // Validação do ano
     experience: z.string().min(1, { message: "Este campo é obrigatório" }),
     motivation: z.string().min(10, { message: "Por favor, escreva pelo menos 10 caracteres" }),
     skills: z.array(z.string()).optional(),
     availability: z.string().min(1, { message: "Este campo é obrigatório" }),
 })
 
+type FormData = z.infer<typeof formSchema>;
+
 export default function SelectionForm() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
 
-    const form = useForm<z.infer<typeof formSchema>>({
+    const form = useForm<FormData>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: "",
             email: "",
             studentId: "",
-            modality: "",
-            year: "",
+            modality: undefined,
+            year: undefined,
             experience: "",
             motivation: "",
-            skills: [],
             availability: "",
+            skills: [],
         },
-    })
+    });
 
-    async function onSubmit(values: z.infer<typeof formSchema>) {        
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        // Aqui você pode implementar o envio dos dados para o backend
     }
 
     const skills = [
@@ -125,13 +131,13 @@ export default function SelectionForm() {
                         </div>
 
                         <div className="grid gap-4 md:grid-cols-2">
-                        <FormField
+                            <FormField
                                 control={form.control}
                                 name="modality"
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Modalidade</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <Select onValueChange={field.onChange} value={field.value}>
                                             <FormControl>
                                                 <SelectTrigger>
                                                     <SelectValue placeholder="Selecione" />
@@ -141,7 +147,7 @@ export default function SelectionForm() {
                                                 <SelectItem value="web">Web</SelectItem>
                                                 <SelectItem value="design">Design</SelectItem>
                                                 <SelectItem value="marketing">Marketing</SelectItem>
-                                                <SelectItem value="robotics">Robótica</SelectItem>                                                
+                                                <SelectItem value="robotics">Robótica</SelectItem>
                                             </SelectContent>
                                         </Select>
                                         <FormMessage />
@@ -155,21 +161,21 @@ export default function SelectionForm() {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Período</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <Select onValueChange={field.onChange} value={field.value}>
                                             <FormControl>
                                                 <SelectTrigger>
                                                     <SelectValue placeholder="Selecione" />
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
-                                                <SelectItem value="1">1º Período</SelectItem>
-                                                <SelectItem value="2">2º Período</SelectItem>
-                                                <SelectItem value="3">3º Período</SelectItem>
-                                                <SelectItem value="4">4º Período</SelectItem>
-                                                <SelectItem value="5">5º Período</SelectItem>
-                                                <SelectItem value="6">6º Período</SelectItem>
-                                                <SelectItem value="7">7º Período</SelectItem>
-                                                <SelectItem value="8">8º Período</SelectItem>                                               
+                                                <SelectItem value="first">1º Período</SelectItem>
+                                                <SelectItem value="second">2º Período</SelectItem>
+                                                <SelectItem value="third">3º Período</SelectItem>
+                                                <SelectItem value="fourth">4º Período</SelectItem>
+                                                <SelectItem value="fifth">5º Período</SelectItem>
+                                                <SelectItem value="sixth">6º Período</SelectItem>
+                                                <SelectItem value="seventh">7º Período</SelectItem>
+                                                <SelectItem value="eighth">8º Período</SelectItem>
                                             </SelectContent>
                                         </Select>
                                         <FormMessage />
@@ -184,7 +190,7 @@ export default function SelectionForm() {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Experiência com Robótica/Programação</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <Select onValueChange={field.onChange} value={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
                                                 <SelectValue placeholder="Selecione seu nível de experiência" />
@@ -266,7 +272,7 @@ export default function SelectionForm() {
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Disponibilidade</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <Select onValueChange={field.onChange} value={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
                                                 <SelectValue placeholder="Selecione sua disponibilidade semanal" />
