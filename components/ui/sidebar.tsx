@@ -1,8 +1,8 @@
-/** @format */
 "use client";
 
 import { useEffect, useState } from "react";
 import { Nav } from "@/components/ui/nav";
+import { signOut } from "next-auth/react";
 
 type Props = {};
 
@@ -10,7 +10,6 @@ import {
   LogOut,
   LayoutDashboard,
   UsersRound,
-  Settings,
 } from "lucide-react";
 
 
@@ -45,18 +44,12 @@ export default function Sidebar({ }: Props) {
             href: "/form",
             icon: UsersRound,
             variant: "ghost"
-          },
-          {
-            title: "Configurações",
-            href: "/settings",
-            icon: Settings,
-            variant: "ghost"
-          },
+          },          
           {
             title: "Logout",
             href: "/",
             icon: LogOut,
-            variant: "ghost"
+            variant: "ghost",
           }
         ]}
       />
