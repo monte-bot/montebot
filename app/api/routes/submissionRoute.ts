@@ -1,15 +1,12 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { handlePostSubmission, handleGetSubmissions } from "../controllers/submissionController";
+import { NextRequest, NextResponse } from "next/server";
+import { createSubmission } from "../functions/submissionFunctions";
 
-const submissionRoute = (req: NextApiRequest, res: NextApiResponse) => {
-    switch (req.method) {
-        case "POST":
-            return handlePostSubmission(req, res);
-        case "GET":
-            return handleGetSubmissions(req, res);
-        default:
-            return res.status(405).json({ message: "Método não permitido" });
+export async function handlePostSubmission(req: NextRequest) {
+    try {
+        const body = await req.json();
+        const submission = await createSubmission(body);
+        return NextResponse.json({ message: "Inscrição criada", submission }, { status: 201 });
+    } catch (error: any) {
+        return NextResponse.json({ message: "Erro", error: error.message }, { status: 500 });
     }
-};
-
-export default submissionRoute;
+}

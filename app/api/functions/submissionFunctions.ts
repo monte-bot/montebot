@@ -4,8 +4,8 @@ export const createSubmission = async (data: {
     name: string;
     email: string;
     studentId: string;
-    modality: string;
-    year: string;
+    modality: "web" | "design" | "marketing" | "robotics";
+    year: "first" | "second" | "third" | "fourth" | "fifth" | "sixth" | "seventh" | "eighth";
     experience: string;
     motivation: string;
     skills: string[];
@@ -22,7 +22,7 @@ export const createSubmission = async (data: {
                 experience: data.experience,
                 motivation: data.motivation,
                 skills: {
-                    set: data.skills,
+                    set: data.skills ?? [],
                 },
                 availability: data.availability,
             },
