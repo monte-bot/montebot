@@ -3,53 +3,53 @@ import Image from "next/image"
 const members = [
     {
         id: 1,
-        name: "Diego",
+        name: "Diego Nunes Molinos",
         role: "Professor Responsável",
-        bio: "Apaixonado por Robótica",
+        bio: "Doutor em Ciência da Computação",
         image: "/members/Diego.JPG",
     },
     {
         id: 2,
-        name: "Leo",
-        role: "Coordenadora",
-        bio: "Especialista em Inteligência Artificial",
+        name: "Leonardo Cardoso de Moura",
+        role: "Aluno Responsável",
+        bio: "Graduando em Sistemas de Informação entusiasta em robotica e impressão 3d",
         image: "/members/Leo.jpeg",
     },
     {
         id: 3,
-        name: "Bruno",
-        role: "Desenvolvedor",
-        bio: "Entusiasta de programação e IoT",
+        name: "Bruno Ferrari",
+        role: "Membro",
+        bio: "Graduando em Sistemas de Informação",
         image: "/members/bruno.jpeg",
     },
     {
         id: 4,
         name: "Nathan Mota",
-        role: "Pesquisadora",
-        bio: "Focada em sistemas embarcados",
+        role: "Web",
+        bio: "Desenvolvedor Full-Stack",
         image: "/members/Nathan.png",
     },
     {
         id: 5,
         name: "Victor Brizante",
-        role: "Técnico",
-        bio: "Especialista em montagem de robôs",
+        role: "Membro",
+        bio: "Graduando em Sistemas de Informação",
         image: "/members/briza.PNG",
     },
     {
         id: 6,
-        name: "Gabriel",
+        name: "Gabriel Fernandes",
         role: "Designer",
-        bio: "Criadora de interfaces para projetos",
+        bio: "Graduando em Sistemas de Informação",
         image: "/members/gabriel.jpeg",
     },
     {
         id: 7,
-        name: "Duda",
-        role: "Designer",
-        bio: "Criadora de interfaces para projetos",
+        name: "Maria Eduarda",
+        role: "Membro",
+        bio: "Graduanda em Sistemas de Informação",
         image: "/members/Duda.JPG",
-    },
+    }
 ]
 
 export default function Members() {
@@ -85,7 +85,7 @@ export default function Members() {
                             <p className="text-yellow-500 font-medium mb-2">{member.role}</p>
                             <p className="text-gray-300">{member.bio}</p>
                             <div className="mt-4 opacity-0 transform translate-y-4 transition-all 
-                            duration-300 group-hover:opacity-100 group-hover:translate-y-0">                                
+                            duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                             </div>
                         </div>
                     </div>
