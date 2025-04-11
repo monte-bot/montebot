@@ -19,8 +19,8 @@ const formSchema = z.object({
     name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
     email: z.string().email({ message: "Email inválido" }),
     studentId: z.string().min(1, { message: "Matrícula é obrigatória" }),
-    modality: z.enum(ModalityEnum, { message: "Modalidade inválida" }), // Validação de modalidade
-    year: z.enum(YearEnum, { message: "Período inválido" }), // Validação do ano
+    modality: z.enum(ModalityEnum, { message: "Modalidade inválida" }),
+    year: z.enum(YearEnum, { message: "Período inválido" }),
     experience: z.string().min(1, { message: "Este campo é obrigatório" }),
     motivation: z.string().min(10, { message: "Por favor, escreva pelo menos 10 caracteres" }),
     skills: z.array(z.string()).optional(),
@@ -49,7 +49,25 @@ export default function SelectionForm() {
     });
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        // Aqui você pode implementar o envio dos dados para o backend
+        setIsSubmitting(true);
+        try {
+            const response = await fetch("/api/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values),
+            });
+
+            if (!response.ok) {
+                throw new Error("Erro ao enviar inscrição");
+            }
+
+            setIsSubmitted(true);
+        } catch (error) {
+            console.error(error);
+            alert("Ocorreu um erro ao enviar o formulário.");
+        } finally {
+            setIsSubmitting(false);
+        }
     }
 
     const skills = [

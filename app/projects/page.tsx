@@ -30,8 +30,12 @@ const projects = [
 export default function Projects() {
     return (
         <div className="container mx-auto px-4 md:px-10 py-12 space-y-24">
-            <div className="text-center">
-                <h1 className="font-gesrics text-4xl font-bold tracking-wide">Projetos</h1>
+            <div className="text-center mb-16">
+                <h1 className="text-4xl font-gesrics md:text-5xl font-bold mb-4">Projetos</h1>
+                <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p className="text-lg text-gray-800 dark:text-gray-300 max-w-2xl mx-auto">
+                    Explore os projetos inovadores desenvolvidos por nossa equipe, que combinam criatividade, tecnologia e paixão pela robótica para solucionar desafios do mundo real.
+                </p>
             </div>
             {projects.map((project, index) => (
                 <div
