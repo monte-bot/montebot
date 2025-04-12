@@ -16,5 +16,5 @@ export function Logo() {
 
   const logoSrc = theme === "dark" ? "/logo/logo-white.svg" : "/logo/logo-dark.svg";
 
-  return <Image src={logoSrc} alt="Logo" width={50} height={50} priority />;
+  return <Image src={logoSrc} alt="Logo" width={35} height={35} priority />;
 }
