@@ -11,7 +11,7 @@ export default function Projects() {
                 <Card className="flex flex-col h-full overflow-hidden">
                     <div className="relative w-full h-48">
                         <Image
-                            src="/projects/arduino.jpg"
+                            src="/projects/car.jpg"
                             height={200}
                             width={400}
                             alt="Carro Autônomo com Arduino"                            
