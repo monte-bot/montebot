@@ -31,9 +31,9 @@ export default function Footer() {
     ];
     
     return (
-        <footer className="pt-10">
-            <div className="container-fluid mx-auto px-4 md:px-8">
-                <div className="flex-1 mt-16 space-y-6 justify-around sm:flex md:space-y-0">
+        <footer className="pt-2 md:pt-10">
+            <div className="container mx-auto px-6 md:px-8">
+                <div className="flex-1 mt-16 space-y-6 justify-between sm:flex text-center sm:text-justify md:space-y-0">
                     {
                         footerNavs.map((item, idx) => (
                             <ul
@@ -66,10 +66,8 @@ export default function Footer() {
                     <p className="font-medium">© 2025 MonteBot. Todos os direitos reservados.</p>
                     <Link href="https://github.com/monte-bot" target="_blank" rel="noopener noreferrer">
                         <div className="flex justify-center items-center gap-2 font-medium">
-
                             <CodeXml />
-                            <p> Monte Bot</p>
-
+                            <p className="pt-4 sm:pt-0"> Monte Bot</p>
                         </div>
                     </Link>
                 </div>

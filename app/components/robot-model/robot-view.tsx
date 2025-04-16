@@ -1,18 +1,22 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Suspense, useState, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import RobotModel from "./index";
 
 export default function RobotViewer() {
-    const [canvasSize, setCanvasSize] = useState({ width: "35vw", height: "45vh" });
+    const handleResize = () => {
+        const canvasContainer = document.getElementById("canvas-container");
+        if (canvasContainer) {
+            const width = window.innerWidth <= 1024 ? "90vw" : "35vw";
+            const height = "45vh";
+            canvasContainer.style.width = width;
+            canvasContainer.style.height = height;
+        }
+    };
 
     useEffect(() => {
-        const handleResize = () => {
-            setCanvasSize({ width: "35vw", height: "45vh" });
-        };
-
         // Chama a função inicialmente e adiciona o listener de resize
         handleResize();
         window.addEventListener("resize", handleResize);
@@ -22,18 +26,19 @@ export default function RobotViewer() {
     }, []);
 
     return (
-        <Canvas
-            camera={{ position: [0, 2, 5], fov: 50 }}
-            style={{ width: canvasSize.width, height: canvasSize.height }}
-        >
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[5, 5, 5]} />
+        <div id="canvas-container" style={{ width: "35vw", height: "45vh" }}>
+            <Canvas
+                camera={{ position: [0, 2, 5], fov: 50 }}
+            >
+                <ambientLight intensity={0.5} />
+                <directionalLight position={[5, 5, 5]} />
 
-            <Suspense fallback={null}>
-                <RobotModel />
-            </Suspense>
+                <Suspense fallback={null}>
+                    <RobotModel />
+                </Suspense>
 
-            <OrbitControls enableZoom={false} enableRotate />
-        </Canvas>
+                <OrbitControls enableZoom={false} enableRotate />
+            </Canvas>
+        </div>
     );
 }
