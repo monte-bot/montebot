@@ -8,15 +8,15 @@ const projects = [
         image: "/projects/car.jpg",
     },
     {
-        title: "Mão Mecânica",
+        title: "Mao Mecanica",
         description:
             "Protótipo de mão robótica impressa em 3D, utilizando Arduino e motores servo para simulação de movimentos humanos. Foco em biomecânica e controle fino.",
         image: "/projects/mao-mecanica.jpg",
     },
     {
-        title: "Automação com Raspberry Pi",
+        title: "Automacao com Raspberry Pi",
         description:
-            "Sistema de automação residencial integrando Raspberry Pi com Arduino para controle de iluminação, sensores de ambiente e monitoramento via rede.",
+            "Sistema de automacao residencial integrando Raspberry Pi com Arduino para controle de iluminação, sensores de ambiente e monitoramento via rede.",
         image: "/projects/raspbery.jpg",
     },
     {
